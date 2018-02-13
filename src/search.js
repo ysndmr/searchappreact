@@ -1,4 +1,5 @@
 import React from 'react';
+import myResults from './dataPack';
 
 export class SearchApp extends React.Component{
 	constructor(){
@@ -12,7 +13,7 @@ export class SearchApp extends React.Component{
 		}
 		let status = 0;
     	this.setState({search: event.target.value});
-    	this.props.myResults.map((el, i) => {
+    	myResults().map((el, i) => {
     		if(el.full_name.toLowerCase().search(event.target.value)> -1){
     			status = 1;
     			document.querySelectorAll('.searchList li')[i].style.display = 'block';
